@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-from jupyter_dash import jupyter_dash
+import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
@@ -12,7 +12,7 @@ fig=px.histogram(df_pu, x="City",y="Sales_pu",histfunc="sum").update_layout(xaxi
 y_data=["Sales_pu","Profit_pu","Discount","Quantity"]
 x_data=['Ship Mode', 'Segment', 'City', 'State', 'Region', 'Category','Sub-Category']
 functions=["sum","min","max","avg"]
-app = jupyter_dash.JupyterDash()
+app = dash.Dash(__name__)
 
 app.layout =html.Div([
     html.H1(children=" Interactive Visualization Dashboard",style={"height":"50px","margin-top":"0px","text-align":"center","background":"#adf0ef"}),
@@ -94,7 +94,7 @@ def update_histogram(x_data,y_data,func):
     fig.update_layout(xaxis={'categoryorder':'sum descending'})
     return fig
 
-app.run_server(mode="inline")
+app.run_server(debug=True)
 
 
 
