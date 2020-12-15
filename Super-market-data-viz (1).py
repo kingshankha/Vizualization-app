@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[11]:
-
-
 from jupyter_dash import jupyter_dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -11,23 +7,7 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
 
-
-# In[12]:
-
-
 df_pu=pd.read_csv("df_pu.csv")
-
-
-# In[13]:
-
-
-## Plotly  Dashboard
-
-
-# In[10]:
-
-
-
 
 fig=px.histogram(df_pu, x="City",y="Sales_pu",histfunc="sum").update_layout(xaxis={'categoryorder':'sum descending'})
 y_data=["Sales_pu","Profit_pu","Discount","Quantity"]
@@ -116,10 +96,4 @@ def update_histogram(x_data,y_data,func):
     return fig
 
 app.run_server(mode="inline")
-
-
-# In[ ]:
-
-
-
 
