@@ -4,7 +4,7 @@
 # In[ ]:
 
 
-pip install dash
-pip install plotly
-pip install pandas
+pip install dash==1.18.1
+pip install plotly==4.14.1
+pip install pandas==1.1.3
 
