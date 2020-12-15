@@ -4,8 +4,8 @@
 # In[ ]:
 
 
-#!/usr/bin/env python
-# coding: utf-8
+pip install -r requirements.txt
+
 
 from jupyter_dash import jupyter_dash
 import dash_core_components as dcc
